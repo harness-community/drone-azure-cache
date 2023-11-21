@@ -44,7 +44,7 @@ DOCKER_ORG/drone-azure-cache
 
 ## Usage in Harness CI
 
-In Harness CI, the pipeline can be added as a Plugin step in the Stages using the Pipeline Studio.
+In Harness CI, the plugin can be implemented in a pipeline as a Plugin step in the Stages using the Pipeline Studio.
 ![Pipeline Image](images/pipeline.png)
 
 Alternatively, the following YAML can be used to implement the plugin as a step
