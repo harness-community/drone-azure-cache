@@ -1,5 +1,6 @@
 # Use an official Python runtime as a parent image
-FROM python:3.10-alpine
+FROM --platform=${BUILDPLATFORM:-linux/amd64} python:3.10-alpine as base
+# FROM python:3.10-alpine
 
 # Set the working directory to /app
 WORKDIR /app
@@ -8,7 +9,9 @@ WORKDIR /app
 COPY . /app
 
 # Install any needed packages specified in requirements.txt
+RUN pip install --upgrade pip setuptools
 RUN pip install azure-storage-blob
+# RUN pip install -r requirements.txt 
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
